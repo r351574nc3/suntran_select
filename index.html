@@ -1,7 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>Suntran Live Bus Tracking Selection</title>
-    <meta name="viewport" content="width=320,user-scalable=false" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Leo Przybylski" />
+    
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
   </head>
   <body>
     <select id="routes">
@@ -47,15 +53,20 @@
       <option id="312X">312x Oro Valley-Tohono Express</option>
     </select>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-      console.log("Loaded")
-      $('#routes').change(function(e) {
-      e.preventDefault()
-      var id = $(this).find(":selected").attr('id')
-      console.log("Got id " + id)
-      window.location.href = 'http://busted.kitplummer.apigee.com/beta/route/' + id + '/busses.kml' 
-      })
+          console.log("Loaded")
+          $('#trace').click(function(e) {
+              e.preventDefault()
+              var id = $('#routes').find(":selected").attr('id')
+              window.location.href = 'http://busted.kitplummer.apigee.com/beta/route/' + id + '/trace.kml' 
+          })
+          $('#busses').click(function(e) {
+              e.preventDefault()
+              var id = $('#routes').find(":selected").attr('id')
+              window.location.href = 'http://busted.kitplummer.apigee.com/beta/route/' + id + '/busses.kml' 
+          })
       })
     </script>
   </body>
