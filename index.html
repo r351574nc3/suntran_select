@@ -58,26 +58,26 @@
         </div>
         <div class="span1">&nbsp;</div>
         <div class="span1">
-          <button id="trace">Trace</button>
+          <button id="trace" class="btn">Trace</button>
         </div>
-        <div class="span1"><button id="busses">Buses</button></div>
+        <div class="span1"><button id="busses" class="btn">Buses</button></div>
       </div>
     </div>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-      console.log("Loaded")
-      $('#trace').click(function(e) {
-      e.preventDefault()
-      var id = $('#routes').find(":selected").attr('id')
-      window.location.href = 'http://busted.kitplummer.apigee.com/beta/route/' + id + '/trace.kml' 
-      })
-      $('#busses').click(function(e) {
-      e.preventDefault()
-      var id = $('#routes').find(":selected").attr('id')
-      window.location.href = 'http://busted.kitplummer.apigee.com/beta/route/' + id + '/busses.kml' 
-      })
+          console.log("Loaded")
+          $('#trace').click(function(e) {
+              e.preventDefault()
+              var id = $('#routes').find(":selected").attr('id')
+              window.location.href = 'http://busted.kitplummer.apigee.com/beta/route/' + id + '/trace.kml' 
+          })
+          $('#busses').click(function(e) {
+              e.preventDefault()
+              var id = $('#routes').find(":selected").attr('id')
+              window.location.href = 'http://busted.kitplummer.apigee.com/beta/route/' + id + '/busses.kml' 
+          })
       })
     </script>
   </body>
