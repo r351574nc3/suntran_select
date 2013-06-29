@@ -44,6 +44,14 @@
 </select>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function() {
+console.log("LOaded")
+$('#routes').click(function(e) {
+    e.preventDefault()
+    var id = $(this).find(":selected").attr('id')
+    console.log("Got id " + id)
+})
+})
 </script>
 </body>
 </htmL>
